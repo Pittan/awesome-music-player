@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
     "apple-music-token-node": "^2.0.1",
+    "lodash-es": "^4.17.15",
+    "postscribe": "^2.0.8",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
