@@ -10,7 +10,7 @@ export const environment = {
     build: '20200505.1',
     token: token.token
   }
-};
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
