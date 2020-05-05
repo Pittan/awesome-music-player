@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ngx-music-kit": {
+      "projectType": "library",
+      "root": "projects/ngx-music-kit",
+      "sourceRoot": "projects/ngx-music-kit/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-music-kit/tsconfig.lib.json",
+            "project": "projects/ngx-music-kit/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-music-kit/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-music-kit/src/test.ts",
+            "tsConfig": "projects/ngx-music-kit/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-music-kit/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-music-kit/tsconfig.lib.json",
+              "projects/ngx-music-kit/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "awesome-music-player"
 }

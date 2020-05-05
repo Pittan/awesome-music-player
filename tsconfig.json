@@ -16,7 +16,13 @@
       "dom"
     ],
     "resolveJsonModule": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "paths": {
+      "ngx-music-kit": [
+        "dist/ngx-music-kit/ngx-music-kit",
+        "dist/ngx-music-kit"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
