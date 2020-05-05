@@ -5,5 +5,8 @@
     "@angular/common": "^9.1.4",
     "@angular/core": "^9.1.4",
     "tslib": "^1.10.0"
+  },
+  "dependencies": {
+    "postscribe": "^2.0.8"
   }
 }

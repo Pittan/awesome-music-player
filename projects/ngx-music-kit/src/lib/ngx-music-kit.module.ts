@@ -1,12 +1,12 @@
-import { NgModule } from '@angular/core';
-import { NgxMusicKitComponent } from './ngx-music-kit.component';
-
-
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
+import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
-  declarations: [NgxMusicKitComponent],
+  declarations: [],
   imports: [
-  ],
-  exports: [NgxMusicKitComponent]
+    CommonModule,
+    HttpClientModule
+  ]
 })
-export class NgxMusicKitModule { }
+export class NgxMusicKitModule {}

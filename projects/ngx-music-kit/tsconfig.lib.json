@@ -5,7 +5,9 @@
     "target": "es2015",
     "declaration": true,
     "inlineSources": true,
-    "types": [],
+    "typeRoots": [
+      "src/types"
+    ],
     "lib": [
       "dom",
       "es2018"
