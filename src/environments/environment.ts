@@ -1,9 +1,15 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
+import token from '../token.json'
 
 export const environment = {
-  production: false
+  production: false,
+  apple_music: {
+    app_name: 'Awesome Music Player(Dev)',
+    build: '20200505.1',
+    token: token.token
+  }
 };
 
 /*
