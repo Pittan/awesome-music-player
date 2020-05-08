@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
-import { NgxMusicKitModule } from 'ngx-music-kit'
+import { NgxMusicKitModule } from 'ngx-music-kit';
+import { CassetteTapeComponent } from './cassette-tape/cassette-tape.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CassetteTapeComponent
   ],
   imports: [
     BrowserModule,
