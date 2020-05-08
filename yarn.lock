@@ -5953,6 +5953,11 @@ mkdirp@^1.0.3:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
+modern-css-reset@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/modern-css-reset/-/modern-css-reset-1.1.0.tgz#91be70bcf6b2aefed0d16e8a439ef174a5f7459a"
+  integrity sha512-JOsOWxyDiZJWhvvx0LVtY9l4MT/1tlDevBkmPbGFEvxTLGVwCOJ/f0ZoT9moTdMsrqZeShJOX/bTaUfI4WfFQw==
+
 moment@^2.24.0:
   version "2.25.3"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.25.3.tgz#252ff41319cf41e47761a1a88cab30edfe9808c0"
