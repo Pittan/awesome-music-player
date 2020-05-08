@@ -1,15 +1,16 @@
 import {
   DeveloperToken,
   MusicKitPlaybackBitrate,
-  MusicKitPlaybackStates,
+  MusicKitPlaybackStates, MusicKitQueue,
   MusicKitSetQueueOptions,
   MusicKitStorefrontId,
   MusicUserToken
 } from './music-kit.interface'
 import { MusicKitPlayer } from './music-kit-player.interface'
+import { MusicKitApi } from './music-kit-api.interface'
 
 export declare class MusicKitInstance {
-  api
+  api: MusicKitApi
   /** The current bit rate for the media player. */
   readonly bitrate: MusicKitPlaybackBitrate
   /**
@@ -85,7 +86,7 @@ export declare class MusicKitInstance {
    *   Because we cannot programatically differentiate between an album or a song from the content identifier,
    *   the declaritive markup assumes album, unless specified with the data-apple-music-media-type attribute.
    */
-  setQueue (options: MusicKitSetQueueOptions): Promise<any>
+  setQueue (options: MusicKitSetQueueOptions): Promise<MusicKitQueue>
   /**
    * Starts playback of the next media item in the playback queue.
    * Returns the current media item position.

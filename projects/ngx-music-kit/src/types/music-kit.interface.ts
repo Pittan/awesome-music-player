@@ -28,7 +28,18 @@ export enum MusicKitPlaybackStates {
 export type MusicKitMusicDescriptor = string | MusicKitMediaItem
 
 export interface MusicKitQueue {
-
+  isEmpty: boolean
+  items: MusicKitMediaItem[]
+  length: number
+  nextPlayableItem: MusicKitMediaItem | undefined
+  position: number
+  previousPlayableItem: MusicKitMediaItem | undefined
+  addEventListener (name: string, callback: Function): void
+  append(descriptor: MusicKitMusicDescriptor): void
+  indexForItem(descriptor: MusicKitMusicDescriptor): number
+  item(): number
+  prepend(descriptor: MusicKitMusicDescriptor): void
+  removeEventListener (name: string, callback: Function): void
 }
 
 export interface MusicKitFormattedPlaybackDuration {
@@ -88,7 +99,7 @@ interface QueryParameters {
 
 export interface MusicKitSetQueueOptions {
   album?: string
-  items: MusicKitMusicDescriptor[]
+  items?: MusicKitMusicDescriptor[]
   parameters?: QueryParameters
   playlist?: string
   song?: string
