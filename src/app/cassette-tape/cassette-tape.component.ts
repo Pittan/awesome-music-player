@@ -8,7 +8,9 @@ interface TapeStyle {
   height?: string
 }
 
-type TapeLength = 10 | 30 | 60 | 90 | 120
+export type PlayerState = 'play' | 'play-reverse' | 'fast-forward' | 'fast-rewind' | 'stop'
+
+export type TapeLength = 10 | 30 | 60 | 90 | 120
 
 @Component({
   selector: 'app-cassette-tape',
@@ -18,14 +20,21 @@ type TapeLength = 10 | 30 | 60 | 90 | 120
 export class CassetteTapeComponent implements AfterViewInit {
 
   @Input()
-  status: 'play' | 'play-reverse' | 'fast-forward' | 'fast-rewind' | 'stop' = 'stop'
+  state: PlayerState
 
   @Input()
-  currentSide: 'A' | 'B' = 'A'
+  set currentSide (val: 'A' | 'B') {
+    this._currentSide = val
+    this.calculateTapeStyle()
+  }
+  get currentSide () {
+    return this._currentSide
+  }
 
   @Input()
   tapeName = ''
 
+  private _currentSide: 'A' | 'B' = 'A'
   private _tapeLengthMin: TapeLength = 10
   private _playbackTimeSec: number = 0
 
