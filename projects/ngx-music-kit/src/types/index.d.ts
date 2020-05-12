@@ -8,7 +8,10 @@ export * from './apple-music-api-response.interface'
 
 import {
   MusicKitArtwork,
-  MusicKitConfiguration, MusicKitEmbedOptions, MusicKitFormattedPlaybackDuration
+  MusicKitConfiguration,
+  MusicKitEmbedOptions,
+  MusicKitEvents,
+  MusicKitFormattedPlaybackDuration, MusicKitPlaybackStates
 } from './music-kit.interface'
 import { MusicKitMKError } from './music-kit-mk-error.interface'
 import { MusicKitInstance } from './music-kit-instance.interface'
@@ -46,6 +49,9 @@ declare global {
       generateEmbedCode (url: string, options: MusicKitEmbedOptions): string,
 
       formatMediaTime (seconds: number, separator: string): string,
+
+      Events: MusicKitEvents,
+      PlaybackStates: MusicKitPlaybackStates
     }
   }
 }

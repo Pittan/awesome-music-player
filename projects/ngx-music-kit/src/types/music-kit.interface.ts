@@ -3,27 +3,27 @@ export type MusicUserToken = string
 export type MusicKitStorefrontId = string
 export type MusicKitMediaItemPosition = number
 export type MusicKitMediaItemOptions = any
-export enum MusicKitPlaybackStates {
+export interface MusicKitPlaybackStates {
   /** This value indicates that playback of all media items in the queue has ended. */
-  COMPLETED = 'completed',
+  completed
   /** This value indicates that playback of the media item has ended. */
-  ENDED = 'ended',
+  ended
   /** This value indicates that loading of the media item has begun. */
-  LOADING = 'loading',
+  loading
   /** This value indicates that the player has not attempted to start playback. */
-  NONE = 'none',
+  none
   /** This value indicates that playback has been paused. */
-  PAUSED = 'paused',
+  paused
   /** This value indicates that the player is currently playing media. */
-  PLAYING = 'playing',
+  playing
   /** This value indicates that the player has started a seek operation. */
-  SEEKING = 'seeking',
+  seeking
   /** This value indicates that the player is trying to fetch media data but cannot retrieve the data. */
-  STALLED = 'stalled',
+  stalled
   /** This value indicates that plaback has been stopped. */
-  STOPPED = 'stopped',
+  stopped
   /** This value indicates that playback is delayed pending the completion of another operation. */
-  WAITING = 'waiting',
+  waiting
 }
 export type MusicKitMusicDescriptor = string | MusicKitMediaItem
 
@@ -40,6 +40,32 @@ export interface MusicKitQueue {
   item(): number
   prepend(descriptor: MusicKitMusicDescriptor): void
   removeEventListener (name: string, callback: Function): void
+}
+
+export interface MusicKitEvents {
+  authorizationStatusDidChange: string
+  authorizationStatusWillChange: string
+  eligibleForSubscribeView: string
+  loaded: string
+  mediaCanPlay: string
+  mediaItemDidChange: string
+  mediaItemWillChange: string
+  mediaPlaybackError: string
+  metadataDidChange: string
+  playbackBitrateDidChange: string
+  playbackDurationDidChange: string
+  playbackProgressDidChange: string
+  playbackStateDidChange: string
+  playbackStateWillChange: string
+  playbackTargetAvailableDidChange: string
+  playbackTimeDidChange: string
+  playbackVolumeDidChange: string
+  primaryPlayerDidChange: string
+  queueItemsDidChange: string
+  queuePositionDidChange: string
+  storefrontCountryCodeDidChange: string
+  storefrontIdentifierDidChange: string
+  userTokenDidChange: string
 }
 
 export interface MusicKitFormattedPlaybackDuration {
@@ -86,7 +112,7 @@ export declare class MusicKitMediaItem {
   title?
   trackNumber?
   type?
-  prepareToPlay ()
+  // prepareToPlay ()
 }
 
 export interface ArtworkURL {

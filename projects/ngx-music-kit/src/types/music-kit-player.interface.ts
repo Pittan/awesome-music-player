@@ -43,7 +43,7 @@ export declare class MusicKitPlayer {
   /** The current shuffle mode of the music player. */
   readonly shuffleMode: MusicKitPlayerShuffleMode
   /** A number indicating the current volume of the music player. */
-  readonly volume: number
+  volume: number
   // Instance methods
   /** Adds an event listener as a callback for an event name.
    * @param name The name of the event.
