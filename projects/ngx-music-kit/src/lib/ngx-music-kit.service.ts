@@ -7,7 +7,7 @@ import {
   GenreRelationship, GetMultipleCatalogAlbumsResponse,
   MusicVideoRelationship, PlaylistRelationship, StationRelationship
 } from '../types'
-import { Observable } from 'rxjs'
+import { BehaviorSubject, Observable } from 'rxjs'
 import postscribe from 'postscribe'
 import { NgxMusicKitModule } from './ngx-music-kit.module'
 
@@ -18,8 +18,9 @@ const API_ENDPOINT = 'https://api.music.apple.com/v1'
 })
 export class NgxMusicKitService {
 
-  private isClientInitialized = false
   private httpHeaders: HttpHeaders
+
+  initialized = new BehaviorSubject(false)
 
   musicKitInstance: MusicKitInstance
 
@@ -48,7 +49,7 @@ export class NgxMusicKitService {
    * Initialize MusicKit JS
    */
   initClient (config: MusicKitConfiguration): Promise<void> {
-    if (this.isClientInitialized) {
+    if (this.initialized.value) {
       return Promise.resolve()
     }
     return this.loadMusicKitJs().then(() => {
@@ -71,7 +72,8 @@ export class NgxMusicKitService {
               this.musicKitInstance.musicUserToken
             )
           }
-          this.isClientInitialized = true
+
+          this.initialized.next(true)
         })
       }
     )
@@ -88,7 +90,7 @@ export class NgxMusicKitService {
   }
 
   private throwErrorIfNotInitialized () {
-    if (!this.isClientInitialized && !this.musicKitInstance) {
+    if (!this.initialized.value && !this.musicKitInstance) {
       throw Error('MusicKit JS is not initialized! You have to run MusicKitClientService.initClient() first.')
     }
   }
