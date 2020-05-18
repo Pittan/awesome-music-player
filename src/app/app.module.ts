@@ -11,7 +11,8 @@ import { PlayerStatePipe } from './music-player/player-state.pipe';
 import { LibraryPlaylistsComponent } from './library-playlists/library-playlists.component';
 import { CatalogPlaylistsComponent } from './catalog-playlists/catalog-playlists.component';
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component'
-import { MatDialogModule } from '@angular/material/dialog'
+import { MatDialogModule } from '@angular/material/dialog';
+import { LicenseComponent } from './license/license.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatDialogModule } from '@angular/material/dialog'
     PlayerStatePipe,
     LibraryPlaylistsComponent,
     CatalogPlaylistsComponent,
-    AuthDialogComponent
+    AuthDialogComponent,
+    LicenseComponent
   ],
   imports: [
     BrowserModule,

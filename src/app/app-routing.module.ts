@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { Routes, RouterModule } from '@angular/router'
 import { CatalogPlaylistsComponent } from './catalog-playlists/catalog-playlists.component'
 import { LibraryPlaylistsComponent } from './library-playlists/library-playlists.component'
+import { LicenseComponent } from './license/license.component'
 
 
 const routes: Routes = [
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'catalog',
     component: CatalogPlaylistsComponent
+  },
+  {
+    path: 'license',
+    component: LicenseComponent
   },
   {
     path: '*',
