@@ -7,6 +7,10 @@ import { LicenseComponent } from './license/license.component'
 
 const routes: Routes = [
   {
+    path: '',
+    component: LibraryPlaylistsComponent
+  },
+  {
     path: 'library',
     component: LibraryPlaylistsComponent
   },
@@ -20,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: '*',
-    redirectTo: 'library'
+    redirectTo: ''
   }
 ]
 

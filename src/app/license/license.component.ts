@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { APP_BASE_HREF, Location } from '@angular/common'
+import { share } from 'rxjs/operators'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-license',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LicenseComponent implements OnInit {
 
-  constructor() { }
+  public license$: Observable<string>
 
-  ngOnInit(): void {
+  constructor (
+    private http: HttpClient,
+    private location: Location
+  ) {
+  }
+
+  /**
+   * 初期化イベントハンドラ
+   */
+  ngOnInit () {
+    const path = this.location.prepareExternalUrl('3rdpartylicenses.txt')
+    const url = `${window.location.protocol}//${window.location.host}/${APP_BASE_HREF}/${path}`
+    this.license$ = this.http.get(url, { responseType: 'text' }
+    ).pipe(share())
   }
 
 }
