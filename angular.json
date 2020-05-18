@@ -121,6 +121,10 @@
               "devServerTarget": "awesome-music-player:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     },
@@ -163,6 +167,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "awesome-music-player"
 }
