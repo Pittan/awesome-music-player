@@ -3,6 +3,8 @@ import { NgxMusicKitService } from 'ngx-music-kit'
 import { environment } from '../environments/environment'
 import { flatMap } from 'lodash-es'
 import { MusicPlayerService } from './music-player/music-player.service'
+import { MatDialog } from '@angular/material/dialog'
+import { AuthDialogComponent } from './auth-dialog/auth-dialog.component'
 
 @Component({
   selector: 'app-root',
@@ -16,7 +18,8 @@ export class AppComponent implements OnInit {
 
   constructor (
     private ngxMusicKit: NgxMusicKitService,
-    private musicPlayer: MusicPlayerService
+    private musicPlayer: MusicPlayerService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit () {
@@ -93,20 +96,11 @@ export class AppComponent implements OnInit {
 
   private authIfNeeded (): Promise<void | string> {
     if (!this.ngxMusicKit.musicKitInstance.isAuthorized) {
-      return this.ngxMusicKit.authorize()
+      this.dialog.open(AuthDialogComponent, {
+        disableClose: true
+      })
     } else {
       return Promise.resolve()
     }
   }
-
-  // private play (queue) {
-  //   this.ngxMusicKit.musicKitInstance.setQueue({
-  //     album: queue
-  //   }).then(queue => {
-  //     console.log('queue: ' + JSON.stringify(queue.nextPlayableItem));
-  //     // this.ngxMusicKit.musicKitInstance.player.play().then((pos) => {
-  //     //   console.log('pos:' + pos);
-  //     // });
-  //   })
-  // }
 }

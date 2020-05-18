@@ -9,7 +9,9 @@ import { MusicPlayerComponent } from './music-player/music-player.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PlayerStatePipe } from './music-player/player-state.pipe';
 import { LibraryPlaylistsComponent } from './library-playlists/library-playlists.component';
-import { CatalogPlaylistsComponent } from './catalog-playlists/catalog-playlists.component'
+import { CatalogPlaylistsComponent } from './catalog-playlists/catalog-playlists.component';
+import { AuthDialogComponent } from './auth-dialog/auth-dialog.component'
+import { MatDialogModule } from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { CatalogPlaylistsComponent } from './catalog-playlists/catalog-playlists
     MusicPlayerComponent,
     PlayerStatePipe,
     LibraryPlaylistsComponent,
-    CatalogPlaylistsComponent
+    CatalogPlaylistsComponent,
+    AuthDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgxMusicKitModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

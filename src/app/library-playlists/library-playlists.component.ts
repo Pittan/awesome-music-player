@@ -23,13 +23,13 @@ export class LibraryPlaylistsComponent implements OnInit {
     this.subscription.add(
       this.ngxMusicKit.initialized.subscribe(val => {
         if (val) {
-          this.authIfNeeded().then(() => {
+          if (this.ngxMusicKit.musicKitInstance.isAuthorized) {
             // List all of your playlist
             this.fetchPlaylist().then(res => {
               this.playLists = res
               console.log(res)
             })
-          })
+          }
         }
       })
     )
@@ -37,14 +37,6 @@ export class LibraryPlaylistsComponent implements OnInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe()
-  }
-
-  private authIfNeeded (): Promise<void | string> {
-    if (!this.ngxMusicKit.musicKitInstance.isAuthorized) {
-      return this.ngxMusicKit.authorize()
-    } else {
-      return Promise.resolve()
-    }
   }
 
   private fetchPlaylist (offset = 0) {
