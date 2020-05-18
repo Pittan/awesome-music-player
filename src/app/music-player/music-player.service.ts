@@ -123,6 +123,7 @@ export class MusicPlayerService {
     this.realDurationSec = duration / 1000
     // console.log('this playlist is about ', durationInMinutes, ' minutes')
     if (durationInMinutes > 120) {
+      alert('120分以上のプレイリストは再生できないよ')
       // NOTE もしかしたら120分以上のプレイリストも再生できるけど、止まるようにしたら面白いかも…？
       //      (そのほうが実際にダビングしたカセットテープ感も出ると思う…)
       throw Error('This playlist is longer than 120 minutes.')

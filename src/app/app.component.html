@@ -1,13 +1,13 @@
 <app-music-player></app-music-player>
-<div class="tab-container">
-  <nav class="tab">
-    <div class="foo"><div class="bar" [class.library]="page1.isActive" [class.catalog]="page2.isActive"></div></div>
-    <div class="tab-inner-container">
-      <a class="tab-button" [routerLink]="'/library'" [routerLinkActive]="'active'" #page1="routerLinkActive">Library</a>
-      <a class="tab-button" [routerLink]="'/catalog'" [routerLinkActive]="'active'" #page2="routerLinkActive">Catalog</a>
-    </div>
-  </nav>
-</div>
+<!--<div class="tab-container">-->
+<!--  <nav class="tab">-->
+<!--    <div class="foo"><div class="bar" [class.library]="page1.isActive" [class.catalog]="page2.isActive"></div></div>-->
+<!--    <div class="tab-inner-container">-->
+<!--      <a class="tab-button" [routerLink]="'/library'" [routerLinkActive]="'active'" #page1="routerLinkActive">Library</a>-->
+<!--      <a class="tab-button" [routerLink]="'/catalog'" [routerLinkActive]="'active'" #page2="routerLinkActive">Catalog</a>-->
+<!--    </div>-->
+<!--  </nav>-->
+<!--</div>-->
 
 <div class="router-container">
   <router-outlet></router-outlet>
