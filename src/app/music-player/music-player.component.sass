@@ -1,0 +1,103 @@
+\:host
+  display: block
+
+  .backdrop
+    height: 100%
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+
+  .player
+    display: block
+    flex-direction: column
+    position: fixed
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+
+  .container
+    z-index: 1000
+    background-color: #DBDBDB
+    border-radius: 8px 8px 0 0
+    padding: 20px
+    width: 100%
+    max-width: 340px
+
+    &.closed
+      transition: transform .2s ease-in-out
+      transform: translateY(10px)
+
+      &:hover
+        transition: transform .1s ease-in-out
+        cursor: pointer
+        transform: translateY(0px)
+
+  .row
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+
+    .display
+      width: 80px
+      height: 56px
+      background-color: #D0E3BD
+      flex: none
+      margin-right: 16px
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .status
+        font-family: dseg
+
+    .speaker-grill
+      height: 56px
+      flex: 1
+      background-color: #DBDBDB
+      background-image: radial-gradient(#707070 30%, transparent 20%), radial-gradient(#707070 30%, transparent 20%)
+      background-size: 8px 8px
+      background-position: 0 0, 0 0
+
+  .cassette-container
+    background-color: #A7A7A7
+    position: relative
+    width: 300px
+    border-radius: 10px
+    margin: 0 auto 16px
+
+    &:after
+      content: ''
+      display: block
+      padding-top: 60%
+
+    app-cassette-tape
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+  .button-row
+    display: flex
+    height: 44px
+
+    button
+      flex: 1 0 44px
+      height: 44px
+      border: 1px solid #717171
+      background-color: #717171
+      color: #fff
+      cursor: pointer
+
+      &.active
+        background-color: #ffffff
+        color: #717171
+        pointer-events: none
+
+      &.fr
+        margin-right: 4px
+      &.stop
+        margin-right: 4px
+      &.eject
+        margin-left: 4px

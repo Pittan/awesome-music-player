@@ -1,0 +1,33 @@
+<div class="backdrop" *ngIf="playerVisibilityState === 'open'" (click)="close()"></div>
+<div class="player">
+  <div class="container"
+       [@slideInOut]="playerVisibilityState"
+       [ngClass]="playerVisibilityState"
+       (click)="toggle()"
+  >
+    <div class="row">
+      <div class="display">
+        <div class="status">{{state | playerState}}</div>
+      </div>
+      <div class="speaker-grill"></div>
+    </div>
+    <div class="cassette-container">
+      <app-cassette-tape
+        *ngIf="isPlayerActive"
+        [tapeLengthMin]="tapeLength"
+        [tapeName]="tapeName"
+        [currentSide]="tapeSide"
+        [playbackTimeSec]="playbackTime"
+        [state]="state"
+      ></app-cassette-tape>
+    </div>
+
+    <div class="button-row">
+      <button (click)="rewind()" class="fr" [class.active]="state === 'fast-rewind'"><<</button>
+      <button (click)="play()" class="play" [class.active]="state === 'play' && isPlayerActive">Play</button>
+      <button (click)="pauseAndStop()" class="stop" [class.active]="state === 'stop' && isPlayerActive">Stop</button>
+      <button (click)="fastForward()" class="ff" [class.active]="state === 'fast-forward'">>></button>
+      <button (click)="flip()" class="eject">Eject</button>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
+## How to launch
+1. Prepare your certificates. (More info on `certificates/README.md`)
+1. Generate your developer token to `src/token.json` using `yarn generate-token`
+1. Run `ng build --project=ngx-music-kit` to build ngx-music-kit that is dependant from the app.
+1. Run `ng serve`, and it's time to dance!
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

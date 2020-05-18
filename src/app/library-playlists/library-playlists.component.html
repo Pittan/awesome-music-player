@@ -1,0 +1,10 @@
+<div class="list-container">
+  <ol>
+    <li
+      *ngFor="let playlist of playLists"
+      (click)="playDirect(playlist.id)"
+    >
+      <span>{{playlist.attributes.name}}</span>
+    </li>
+  </ol>
+</div>
