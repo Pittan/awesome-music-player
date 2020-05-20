@@ -13,6 +13,7 @@ import { CatalogPlaylistsComponent } from './catalog-playlists/catalog-playlists
 import { AuthDialogComponent } from './auth-dialog/auth-dialog.component'
 import { MatDialogModule } from '@angular/material/dialog';
 import { LicenseComponent } from './license/license.component'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LicenseComponent } from './license/license.component'
     BrowserModule,
     AppRoutingModule,
     NgxMusicKitModule,
+    FontAwesomeModule,
     BrowserAnimationsModule,
     MatDialogModule
   ],

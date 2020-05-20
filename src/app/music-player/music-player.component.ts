@@ -6,6 +6,11 @@ import {
   TapeLength
 } from '../cassette-tape/cassette-tape.component'
 import { state, animate, style, transition, trigger } from '@angular/animations'
+import {
+  faBackward,
+  faEject,
+  faForward, faPlay, faStop
+} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-music-player',
@@ -25,6 +30,12 @@ import { state, animate, style, transition, trigger } from '@angular/animations'
   ]
 })
 export class MusicPlayerComponent implements OnInit, OnDestroy {
+
+  faPlay = faPlay
+  faStop = faStop
+  faEject = faEject
+  faForward = faForward
+  faBackward = faBackward
 
   playbackTime: number
   state: PlayerState
