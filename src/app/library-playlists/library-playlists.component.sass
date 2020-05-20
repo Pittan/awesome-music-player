@@ -3,6 +3,7 @@
   background-color: #f5f5f5
   width: 100%
   user-select: none
+  -webkit-user-select: none
 
 h2
   color: #424242
@@ -15,15 +16,18 @@ h2
     margin-top: 0
     li
       font-size: 16px
-      height: 40px
-      background-color: #fff
-      margin-bottom: 2px
-      display: flex
-      align-items: center
-      padding: 8px
+      list-style: none
 
-      &:active
-        background-color: #e0e0e0
+      .container
+        height: 40px
+        background-color: #fff
+        margin-bottom: 2px
+        display: flex
+        align-items: center
+        padding: 8px
+
+        &:active
+          background-color: #e0e0e0
 
       span
         color: #424242
