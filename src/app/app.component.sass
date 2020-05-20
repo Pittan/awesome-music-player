@@ -4,13 +4,17 @@
   min-height: 100vh
 
 .app-header
-  min-height: 40px
+  height: 80px
   width: 100%
   background-color: #fff
   border-bottom: 1px solid #e0e0e0
+  position: fixed
+  top: 0
+  left: 0
 
   @media screen and (min-width: 768px)
     display: flex
+    height: 40px
 
   .title-container
     flex: none
@@ -26,6 +30,11 @@
       width: unset
       justify-content: flex-start
       padding: 0 20px
+
+    > a
+      font-size: 14px
+      text-decoration: none
+      color: #212121
 
   .links
     flex: none
@@ -43,6 +52,7 @@
       justify-content: center
       height: 100%
       font-size: 14px
+      color: #414141
 
 .container
   width: 100%
@@ -116,3 +126,10 @@ app-cassette-tape
 
 .router-container
   padding-bottom: 80px
+  padding-top: 80px
+  max-width: 640px
+  margin: 0 auto
+
+  @media screen and (min-width: 768px)
+    display: flex
+    padding-top: 40px
