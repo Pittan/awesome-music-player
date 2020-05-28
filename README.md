@@ -1,4 +1,11 @@
-# AwesomeMusicPlayer
+# Awesome Music Player
+
+<p align="center">
+  <a href="https://kabu-bell.pittankopta.net/">
+    <img src="https://user-images.githubusercontent.com/6269639/83108702-279c1f80-a0fb-11ea-8428-c6e29f70eac4.gif" width="400" alt="demo">  
+  </a><br>
+  https://pittan.github.io/awesome-music-player/
+</p><br><br>
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
